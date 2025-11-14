@@ -56,8 +56,10 @@ export default function AdminLeadsPage() {
     },
   ]
 
-  const getStatusColor = (status: string) => {
-    const colors: Record<string, string> = {
+  type BadgeVariant = "default" | "destructive" | "outline" | "secondary"
+
+  const getStatusColor = (status: string): BadgeVariant => {
+    const colors: Record<string, BadgeVariant> = {
       open: "default",
       assigned: "secondary",
       contacted: "outline",

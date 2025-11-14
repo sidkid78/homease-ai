@@ -48,7 +48,7 @@ export function ContractorProfile({ contractorData }: ContractorProfileProps) {
       ...prev,
       specializations: checked
         ? [...prev.specializations, specialization]
-        : prev.specializations.filter((s) => s !== specialization),
+        : prev.specializations.filter((s: string) => s !== specialization),
     }))
   }
 
@@ -179,7 +179,7 @@ export function ContractorProfile({ contractorData }: ContractorProfileProps) {
               <div className="space-y-2">
                 <Label>Service Areas</Label>
                 <div className="flex flex-wrap gap-2">
-                  {profileData.serviceAreas.map((area, index) => (
+                  {profileData.serviceAreas.map((area: string, index: number) => (
                     <Badge key={index} variant="outline">
                       <MapPin className="mr-1 h-3 w-3" />
                       {area}
